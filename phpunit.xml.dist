@@ -13,10 +13,10 @@
          strict="true"
          verbose="true">
     <testsuites>
-        <testsuite name="AskUnitTests">
+        <testsuite name="AskSerializationUnitTests">
             <directory>Tests/Phpunit</directory>
         </testsuite>
-        <testsuite name="AskIntegrationTests">
+        <testsuite name="AskSerializationIntegrationTests">
             <directory>Tests/Integration</directory>
         </testsuite>
     </testsuites>
