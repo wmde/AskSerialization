@@ -31,6 +31,7 @@
 		"data-values/common": "dev-master",
 		"serialization/serialization": "~2.0"
 	},
+	"minimum-stability" : "dev",
 	"require-dev": {
 		"satooshi/php-coveralls": "dev-master"
 	},
