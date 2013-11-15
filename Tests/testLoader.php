@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Test class autoloader for the Ask library.
+ * Test class autoloader for the Ask Serialization library.
  *
  * @since 1.0
  *

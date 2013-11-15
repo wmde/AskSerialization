@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHPUnit test bootstrap file for the Ask library.
+ * PHPUnit test bootstrap file for the Ask Serialization library.
  *
  * @since 1.0
  *
@@ -9,6 +9,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
-require_once( __DIR__ . '/../Ask.php' );
+require_once( __DIR__ . '/../AskSerialization.php' );
 
 require_once( __DIR__ . '/testLoader.php' );
