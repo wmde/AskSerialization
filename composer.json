@@ -1,5 +1,5 @@
 {
-	"name": "ask/ask",
+	"name": "ask/serialization",
 	"type": "library",
 	"description": "Library containing serializers and deserializers for the PHP implementation of the Ask query language",
 	"keywords": [
