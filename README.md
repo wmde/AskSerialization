@@ -81,7 +81,8 @@ Initial release with these features:
 
 ## Links
 
-* [Ask on Packagist](https://packagist.org/packages/ask/ask)
-* [Ask on Ohloh](https://www.ohloh.net/p/ask)
-* [TravisCI build status](https://travis-ci.org/wmde/Ask)
+* [AskSerialization on Packagist](https://packagist.org/packages/ask/serialization)
+* [AskSerialization on Ohloh](https://www.ohloh.net/p/ask)
+* [TravisCI build status](https://travis-ci.org/wmde/AskSerialization)
+* [Ask livrary](https://github.com/wmde/Ask)
 * [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)
