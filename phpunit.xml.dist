@@ -1,6 +1,6 @@
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="Tests/bootstrap.php"
+         bootstrap="tests/bootstrap.php"
          cacheTokens="false"
          colors="true"
          convertErrorsToExceptions="true"
@@ -14,10 +14,10 @@
          verbose="true">
     <testsuites>
         <testsuite name="AskSerializationUnitTests">
-            <directory>Tests/Phpunit</directory>
+            <directory>tests/Phpunit</directory>
         </testsuite>
         <testsuite name="AskSerializationIntegrationTests">
-            <directory>Tests/Integration</directory>
+            <directory>tests/Integration</directory>
         </testsuite>
     </testsuites>
     <filter>

@@ -72,12 +72,10 @@ as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project]
 
 ## Release notes
 
-### 1.0 (under development)
+### 1.0 (dev)
 
 Initial release with these features:
 
-* PHP implementation of the Ask language core
-* Implementation of descriptions, selection requests and sort options initially needed for Wikidata
 * Serializers for all implemented Ask language objects
 * Deserializers for all implemented Ask language objects
 
