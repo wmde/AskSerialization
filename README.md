@@ -1,6 +1,7 @@
 # Ask Serialization
 
-Library containing serializers and deserializers for the PHP implementation of the Ask query language.
+Library containing serializers and deserializers for the PHP implementation of the
+[Ask query language](https://github.com/wmde/Ask).
 
 [![Build Status](https://secure.travis-ci.org/wmde/AskSerialization.png?branch=master)](http://travis-ci.org/wmde/AskSerialization)
 [![Code Coverage](https://scrutinizer-ci.com/g/wmde/AskSerialization/badges/coverage.png?s=451c8ee074823e1a9cdb6ce2e891f6f9979519d1)](https://scrutinizer-ci.com/g/wmde/AskSerialization/)
