@@ -3,7 +3,8 @@
 Library containing serializers and deserializers for the PHP implementation of the Ask query language.
 
 [![Build Status](https://secure.travis-ci.org/wmde/AskSerialization.png?branch=master)](http://travis-ci.org/wmde/AskSerialization)
-[![Coverage Status](https://coveralls.io/repos/wmde/AskSerialization/badge.png?branch=master)](https://coveralls.io/r/wmde/AskSerialization?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/wmde/AskSerialization/badges/coverage.png?s=451c8ee074823e1a9cdb6ce2e891f6f9979519d1)](https://scrutinizer-ci.com/g/wmde/AskSerialization/)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wmde/AskSerialization/badges/quality-score.png?s=a5a22cfee53fc9b9bcb9fd7c27c7489fb2fbb614)](https://scrutinizer-ci.com/g/wmde/AskSerialization/)
 
 On Packagist:
 [![Latest Stable Version](https://poser.pugx.org/ask/serialization/version.png)](https://packagist.org/packages/ask/serialization)
@@ -55,7 +56,7 @@ as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project]
 
 ## Release notes
 
-### 1.0 (dev)
+### 1.0 (2013-12-05)
 
 Initial release with these features:
 
@@ -66,6 +67,7 @@ Initial release with these features:
 
 * [AskSerialization on Packagist](https://packagist.org/packages/ask/serialization)
 * [AskSerialization on Ohloh](https://www.ohloh.net/p/ask)
+* [AskSerialization on ScrutinizerCI](https://scrutinizer-ci.com/g/wmde/AskSerialization/)
 * [TravisCI build status](https://travis-ci.org/wmde/AskSerialization)
 * [Ask library](https://github.com/wmde/Ask)
 * [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)
