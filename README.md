@@ -6,7 +6,7 @@ Library containing serializers and deserializers for the PHP implementation of t
 [![Build Status](https://secure.travis-ci.org/wmde/AskSerialization.png?branch=master)](http://travis-ci.org/wmde/AskSerialization)
 [![Code Coverage](https://scrutinizer-ci.com/g/wmde/AskSerialization/badges/coverage.png?s=451c8ee074823e1a9cdb6ce2e891f6f9979519d1)](https://scrutinizer-ci.com/g/wmde/AskSerialization/)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wmde/AskSerialization/badges/quality-score.png?s=a5a22cfee53fc9b9bcb9fd7c27c7489fb2fbb614)](https://scrutinizer-ci.com/g/wmde/AskSerialization/)
-[![Dependency Status](https://www.versioneye.com/php/ask:serialization/badge.png)](https://www.versioneye.com/php/ask:serialization)
+[![Dependency Status](https://www.versioneye.com/php/ask:serialization/dev-master/badge.png)](https://www.versioneye.com/php/ask:serialization)
 
 On Packagist:
 [![Latest Stable Version](https://poser.pugx.org/ask/serialization/version.png)](https://packagist.org/packages/ask/serialization)
