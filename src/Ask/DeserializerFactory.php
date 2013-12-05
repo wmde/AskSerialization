@@ -7,7 +7,6 @@ use Ask\Deserializers\QueryDeserializer;
 use Ask\Deserializers\QueryOptionsDeserializer;
 use Ask\Deserializers\SelectionRequestDeserializer;
 use Ask\Deserializers\SortExpressionDeserializer;
-use DataValues\DataValueFactory;
 use Deserializers\Deserializer;
 use Deserializers\DispatchingDeserializer;
 
@@ -23,10 +22,10 @@ use Deserializers\DispatchingDeserializer;
  */
 class DeserializerFactory {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dvDeserializer ) {
+		$this->dvDeserializer = $dvDeserializer;
 	}
 
 	/**
@@ -55,7 +54,7 @@ class DeserializerFactory {
 	 * @return Deserializer
 	 */
 	public function newDescriptionDeserializer() {
-		return new DescriptionDeserializer( $this->dataValueFactory );
+		return new DescriptionDeserializer( $this->dvDeserializer );
 	}
 
 	/**
@@ -66,7 +65,7 @@ class DeserializerFactory {
 	 * @return Deserializer
 	 */
 	public function newSelectionRequestDeserializer() {
-		return new SelectionRequestDeserializer( $this->dataValueFactory );
+		return new SelectionRequestDeserializer( $this->dvDeserializer );
 	}
 
 	/**
@@ -77,7 +76,7 @@ class DeserializerFactory {
 	 * @return Deserializer
 	 */
 	public function newSortExpressionDeserializer() {
-		return new SortExpressionDeserializer( $this->dataValueFactory );
+		return new SortExpressionDeserializer( $this->dvDeserializer );
 	}
 
 	/**

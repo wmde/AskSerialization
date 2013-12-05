@@ -4,16 +4,10 @@ namespace Ask\Tests\Phpunit\Deserializers;
 
 use Ask\Deserializers\QueryOptionsDeserializer;
 use Ask\Deserializers\SortExpressionDeserializer;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 
 /**
  * @covers Ask\Deserializers\QueryOptionsDeserializer
- *
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -21,10 +15,11 @@ use DataValues\DataValueFactory;
 class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 	protected function newQueryOptionsDeserializer() {
-		$dvFactory = new DataValueFactory();
-		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
-		$sortExpressionSerializer = new SortExpressionDeserializer( $dvFactory );
+		$sortExpressionSerializer = new SortExpressionDeserializer( $dvDeserializer );
 
 		return new QueryOptionsDeserializer( $sortExpressionSerializer );
 	}

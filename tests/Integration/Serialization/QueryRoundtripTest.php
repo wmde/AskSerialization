@@ -15,26 +15,21 @@ use Ask\Language\Query;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
 use Ask\SerializerFactory;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 use DataValues\StringValue;
 
 /**
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class QueryRoundtripTest extends \PHPUnit_Framework_TestCase {
 
 	protected function newQueryDeserializer() {
-		$dvFactory = new DataValueFactory();
-		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
-		$deserializerFactory = new DeserializerFactory( $dvFactory );
+		$deserializerFactory = new DeserializerFactory( $dvDeserializer );
 
 		return $deserializerFactory->newQueryDeserializer();
 	}

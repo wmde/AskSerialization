@@ -6,17 +6,11 @@ use Ask\Deserializers\DescriptionDeserializer;
 use Ask\Deserializers\QueryDeserializer;
 use Ask\Deserializers\QueryOptionsDeserializer;
 use Ask\Deserializers\SortExpressionDeserializer;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 use Deserializers\DispatchingDeserializer;
 
 /**
  * @covers Ask\Deserializers\QueryDeserializer
- *
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -28,11 +22,12 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$componentDeserializer->addDeserializer( new QueryOptionsDeserializer( $componentDeserializer ) );
 
-		$dvFactory = new DataValueFactory();
-		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
-		$componentDeserializer->addDeserializer( new DescriptionDeserializer( $dvFactory ) );
-		$componentDeserializer->addDeserializer( new SortExpressionDeserializer( $dvFactory ) );
+		$componentDeserializer->addDeserializer( new DescriptionDeserializer( $dvDeserializer ) );
+		$componentDeserializer->addDeserializer( new SortExpressionDeserializer( $dvDeserializer ) );
 
 		return new QueryDeserializer( $componentDeserializer );
 	}

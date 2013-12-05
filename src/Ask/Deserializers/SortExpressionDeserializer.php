@@ -3,7 +3,6 @@
 namespace Ask\Deserializers;
 
 use Ask\Deserializers\Strategies\SortExpressionDeserializationStrategy;
-use DataValues\DataValueFactory;
 use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\StrategicDeserializer;
@@ -16,17 +15,17 @@ use Deserializers\StrategicDeserializer;
  */
 class SortExpressionDeserializer implements Deserializer {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 	protected $deserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dataValueDeserializer ) {
+		$this->dvDeserializer = $dataValueDeserializer;
 		$this->deserializer = $this->newDeserializer();
 	}
 
 	protected function newDeserializer() {
 		return new StrategicDeserializer(
-			new SortExpressionDeserializationStrategy( $this->dataValueFactory ),
+			new SortExpressionDeserializationStrategy( $this->dvDeserializer ),
 			'sortExpression',
 			'sortExpressionType'
 		);
