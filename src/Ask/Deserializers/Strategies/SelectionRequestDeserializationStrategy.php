@@ -39,10 +39,8 @@ class SelectionRequestDeserializationStrategy extends TypedDeserializationStrate
 		switch ( $selectionRequestType ) {
 			case 'property':
 				return $this->newPropertySelectionRequest( $valueSerialization );
-				break;
 			case 'subject':
 				return new SubjectSelection();
-				break;
 		}
 
 		throw new InvalidAttributeException( 'selectionRequestType', $selectionRequestType );
