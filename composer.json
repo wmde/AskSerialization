@@ -29,7 +29,7 @@
 		"serialization/serialization": "~2.0",
 		"data-values/data-values": "~0.1",
 		"data-values/common": "~0.1",
-		"data-values/serialization": "*"
+		"data-values/serialization": "~0.1"
 	},
 	"autoload": {
 		"files" : [
