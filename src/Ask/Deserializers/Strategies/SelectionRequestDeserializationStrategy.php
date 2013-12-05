@@ -4,7 +4,7 @@ namespace Ask\Deserializers\Strategies;
 
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
-use DataValues\DataValueFactory;
+use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\Exceptions\InvalidAttributeException;
 use Deserializers\TypedDeserializationStrategy;
@@ -18,10 +18,10 @@ use InvalidArgumentException;
  */
 class SelectionRequestDeserializationStrategy extends TypedDeserializationStrategy {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dataValueDeserializer ) {
+		$this->dvDeserializer = $dataValueDeserializer;
 	}
 
 	/**
@@ -52,12 +52,7 @@ class SelectionRequestDeserializationStrategy extends TypedDeserializationStrate
 		$this->requireAttribute( $value, 'property' );
 		$this->assertAttributeIsArray( $value, 'property' );
 
-		try {
-			$propertyId = $this->dataValueFactory->newFromArray( $value['property'] );
-		}
-		catch ( InvalidArgumentException $ex ) {
-			throw new DeserializationException( '', $ex );
-		}
+		$propertyId = $this->dvDeserializer->deserialize( $value['property'] );
 
 		return new PropertySelection( $propertyId );
 	}

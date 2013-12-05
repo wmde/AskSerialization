@@ -3,7 +3,7 @@
 namespace Ask\Deserializers;
 
 use Ask\Deserializers\Strategies\SelectionRequestDeserializationStrategy;
-use DataValues\DataValueFactory;
+use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\StrategicDeserializer;
 use Deserializers\TypedObjectDeserializer;
@@ -16,18 +16,18 @@ use Deserializers\TypedObjectDeserializer;
  */
 class SelectionRequestDeserializer extends TypedObjectDeserializer {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 	protected $deserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dataValueDeserializer ) {
+		$this->dvDeserializer = $dataValueDeserializer;
 		$this->deserializer = $this->newDeserializer();
 	}
 
 	protected function newDeserializer() {
 		return new StrategicDeserializer(
 			new SelectionRequestDeserializationStrategy(
-				$this->dataValueFactory,
+				$this->dvDeserializer,
 				$this
 			),
 			'selectionRequest',

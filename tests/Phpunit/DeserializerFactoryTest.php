@@ -8,12 +8,6 @@ use Deserializers\Deserializer;
 /**
  * @covers Ask\DeserializerFactory
  *
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  * @author Adam Shorland < adamshorland@gmail.com >
@@ -21,7 +15,7 @@ use Deserializers\Deserializer;
 class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanGetQueryDeserializer() {
-		$dataValueFactory = $this->getMock('DataValues\DataValueFactory');
+		$dataValueFactory = $this->getMock( 'Deserializers\Deserializer' );
 		$askFactory = new DeserializerFactory( $dataValueFactory );
 
 		$deserializer = $askFactory->newQueryDeserializer();
@@ -47,10 +41,10 @@ class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetDescriptionDeserializer() {
-		$dataValueFactory = $this->getMock('DataValues\DataValueFactory');
+		$dataValueFactory = $this->getMock( 'Deserializers\Deserializer' );
 		$askFactory = new DeserializerFactory( $dataValueFactory );
 
-		$deserializer = $askFactory->newDescriptionDeserializer( $dataValueFactory );
+		$deserializer = $askFactory->newDescriptionDeserializer();
 
 		$object = array(
 			'objectType' => 'description',
@@ -62,10 +56,10 @@ class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetSelectionRequestDeserializer() {
-		$dataValueFactory = $this->getMock('DataValues\DataValueFactory');
+		$dataValueFactory = $this->getMock( 'Deserializers\Deserializer' );
 		$askFactory = new DeserializerFactory( $dataValueFactory );
 
-		$deserializer = $askFactory->newSelectionRequestDeserializer( $dataValueFactory );
+		$deserializer = $askFactory->newSelectionRequestDeserializer();
 
 		$object = array(
 			'objectType' => 'selectionRequest',
@@ -77,10 +71,10 @@ class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetSortExpressionDeserializer() {
-		$dataValueFactory = $this->getMock('DataValues\DataValueFactory');
+		$dataValueFactory = $this->getMock( 'Deserializers\Deserializer' );
 		$askFactory = new DeserializerFactory( $dataValueFactory );
 
-		$deserializer = $askFactory->newSortExpressionDeserializer( $dataValueFactory );
+		$deserializer = $askFactory->newSortExpressionDeserializer();
 
 		$object = array(
 			'objectType' => 'sortExpression',
@@ -92,10 +86,10 @@ class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetQueryOptionsDeserializer() {
-		$dataValueFactory = $this->getMock('DataValues\DataValueFactory');
+		$dataValueFactory = $this->getMock( 'Deserializers\Deserializer' );
 		$askFactory = new DeserializerFactory( $dataValueFactory );
 
-		$deserializer = $askFactory->newQueryOptionsDeserializer( $dataValueFactory );
+		$deserializer = $askFactory->newQueryOptionsDeserializer();
 
 		$object = array(
 			'objectType' => 'queryOptions',
@@ -108,6 +102,5 @@ class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertDeserializerThatCanDeserializeObject( $deserializer, $object );
 	}
-
 
 }

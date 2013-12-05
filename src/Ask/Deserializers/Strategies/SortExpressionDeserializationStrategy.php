@@ -3,7 +3,7 @@
 namespace Ask\Deserializers\Strategies;
 
 use Ask\Language\Option\PropertyValueSortExpression;
-use DataValues\DataValueFactory;
+use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\Exceptions\InvalidAttributeException;
 use Deserializers\TypedDeserializationStrategy;
@@ -17,10 +17,10 @@ use InvalidArgumentException;
  */
 class SortExpressionDeserializationStrategy extends TypedDeserializationStrategy {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dataValueDeserializer ) {
+		$this->dvDeserializer = $dataValueDeserializer;
 	}
 
 	/**
@@ -45,12 +45,12 @@ class SortExpressionDeserializationStrategy extends TypedDeserializationStrategy
 
 		try {
 			$expression = new PropertyValueSortExpression(
-				$this->dataValueFactory->newFromArray( $valueSerialization['property'] ),
+				$this->dvDeserializer->deserialize( $valueSerialization['property'] ),
 				$valueSerialization['direction']
 			);
 		}
 		catch ( InvalidArgumentException $ex ) {
-			throw new DeserializationException( '', $ex );
+			throw new DeserializationException( $ex->getMessage(), $ex );
 		}
 
 		return $expression;

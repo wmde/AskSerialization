@@ -7,18 +7,12 @@ use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 use DataValues\StringValue;
 
 /**
  * @covers Ask\Deserializers\DescriptionDeserializer
  * @covers Ask\Deserializers\Strategies\DescriptionDeserializationStrategy
- *
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -26,10 +20,11 @@ use DataValues\StringValue;
 class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 	protected function newDescriptionDeserializer() {
-		$dvFactory = new DataValueFactory();
-		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
-		return new DescriptionDeserializer( $dvFactory );
+		return new DescriptionDeserializer( $dvDeserializer );
 	}
 
 	/**

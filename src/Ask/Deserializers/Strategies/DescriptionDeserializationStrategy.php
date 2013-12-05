@@ -8,7 +8,6 @@ use Ask\Language\Description\Description;
 use Ask\Language\Description\Disjunction;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
-use DataValues\DataValueFactory;
 use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\Exceptions\InvalidAttributeException;
@@ -25,11 +24,11 @@ use Deserializers\TypedDeserializationStrategy;
  */
 class DescriptionDeserializationStrategy extends TypedDeserializationStrategy {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 	protected $descriptionDeserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory, Deserializer $descriptionDeserializer ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dataValueFactory, Deserializer $descriptionDeserializer ) {
+		$this->dvDeserializer = $dataValueFactory;
 		$this->descriptionDeserializer = $descriptionDeserializer;
 	}
 
@@ -78,31 +77,30 @@ class DescriptionDeserializationStrategy extends TypedDeserializationStrategy {
 
 		try {
 			$someProperty = new SomeProperty(
-				$this->dataValueFactory->newFromArray( $descriptionValue['property'] ),
+				$this->deserializeDataValue( $descriptionValue['property'] ),
 				$this->descriptionDeserializer->deserialize( $descriptionValue['description'] ),
 				$descriptionValue['isSubProperty']
 			);
 		}
 		catch ( \InvalidArgumentException $ex ) {
-			throw new DeserializationException( '', $ex );
+			throw new DeserializationException( $ex->getMessage(), $ex );
 		}
 
 		return $someProperty;
+	}
+
+	protected function deserializeDataValue( $dvSerialization ) {
+		return $this->dvDeserializer->deserialize( $dvSerialization );
 	}
 
 	protected function newValueDescription( array $descriptionValue ) {
 		$this->requireAttributes( $descriptionValue, 'value', 'comparator' );
 		$this->assertAttributeIsArray( $descriptionValue, 'value' );
 
-		try {
-			$valueDescription = new ValueDescription(
-				$this->dataValueFactory->newFromArray( $descriptionValue['value'] ),
-				$this->deserialzeComparator( $descriptionValue['comparator'] )
-			);
-		}
-		catch ( \InvalidArgumentException $ex ) {
-			throw new DeserializationException( '', $ex );
-		}
+		$valueDescription = new ValueDescription(
+			$this->deserializeDataValue( $descriptionValue['value'] ),
+			$this->deserialzeComparator( $descriptionValue['comparator'] )
+		);
 
 		return $valueDescription;
 	}

@@ -17,12 +17,6 @@ use Ask\SerializerFactory;
 use DataValues\StringValue;
 
 /**
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */

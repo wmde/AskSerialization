@@ -28,7 +28,8 @@
 		"ask/ask": "~1.0",
 		"serialization/serialization": "~2.0",
 		"data-values/data-values": "~0.1",
-		"data-values/common": "~0.1"
+		"data-values/common": "~0.1",
+		"data-values/serialization": "dev-deserializer"
 	},
 	"autoload": {
 		"files" : [

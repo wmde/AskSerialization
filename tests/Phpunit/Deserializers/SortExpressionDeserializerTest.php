@@ -4,18 +4,12 @@ namespace Ask\Tests\Phpunit\Deserializers;
 
 use Ask\Deserializers\SortExpressionDeserializer;
 use Ask\Language\Option\SortExpression;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 use DataValues\StringValue;
 
 /**
  * @covers Ask\Deserializers\SortExpressionDeserializer
  * @covers Ask\Deserializers\Strategies\SortExpressionDeserializationStrategy
- *
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -23,10 +17,11 @@ use DataValues\StringValue;
 class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 	protected function newSortExpressionDeserializer() {
-		$dvFactory = new DataValueFactory();
-		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
-		return new SortExpressionDeserializer( $dvFactory );
+		return new SortExpressionDeserializer( $dvDeserializer );
 	}
 
 	/**

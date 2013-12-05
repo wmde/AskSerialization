@@ -9,21 +9,11 @@ On Packagist:
 [![Latest Stable Version](https://poser.pugx.org/ask/serialization/version.png)](https://packagist.org/packages/ask/serialization)
 [![Download count](https://poser.pugx.org/ask/serialization/d/total.png)](https://packagist.org/packages/ask/serialization)
 
-## Requirements
-
-* PHP 5.3 or later
-* [Ask](https://github.com/wmde/Ask) 1.x or later
-* [DataValues](https://www.mediawiki.org/wiki/Extension:DataValues) 0.1 or later
-* [DataValuesCommon](https://www.mediawiki.org/wiki/Extension:DataValuesCommon) 0.1 or later
-* [Serialization](https://github.com/wmde/Serialization/blob/master/README.md) 2.x
-
 ## Installation
 
 You can use [Composer](http://getcomposer.org/) to download and install
 this package as well as its dependencies. Alternatively you can simply clone
 the git repository and take care of loading yourself.
-
-### Composer
 
 To add this package as a local, per-project dependency to your project, simply add a
 dependency on `ask/serialization` to your project's `composer.json` file.
@@ -35,13 +25,6 @@ Ask 1.0:
             "ask/serialization": "1.0.*"
         }
     }
-
-### Manual
-
-Get the Ask Serialization code, either via git, or some other means. Also get all dependencies.
-You can find a list of the dependencies in the "require" section of the composer.json file.
-Load all dependencies and the load the Ask Serialization library by including its entry point:
-AskSerialization.php.
 
 ## Library structure
 
@@ -84,5 +67,5 @@ Initial release with these features:
 * [AskSerialization on Packagist](https://packagist.org/packages/ask/serialization)
 * [AskSerialization on Ohloh](https://www.ohloh.net/p/ask)
 * [TravisCI build status](https://travis-ci.org/wmde/AskSerialization)
-* [Ask livrary](https://github.com/wmde/Ask)
+* [Ask library](https://github.com/wmde/Ask)
 * [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)

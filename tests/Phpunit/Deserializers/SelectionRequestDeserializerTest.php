@@ -3,17 +3,11 @@
 namespace Ask\Tests\Phpunit\Deserializers;
 
 use Ask\Deserializers\SelectionRequestDeserializer;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 
 /**
  * @covers Ask\Deserializers\SelectionRequestDeserializer
  * @covers Ask\Deserializers\Strategies\SelectionRequestDeserializationStrategy
- *
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
@@ -21,10 +15,11 @@ use DataValues\DataValueFactory;
 class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 	protected function newSelectionRequestDeserializer() {
-		$dvFactory = new DataValueFactory();
-		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
-		return new SelectionRequestDeserializer( $dvFactory );
+		return new SelectionRequestDeserializer( $dvDeserializer );
 	}
 
 	/**

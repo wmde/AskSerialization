@@ -3,7 +3,6 @@
 namespace Ask\Deserializers;
 
 use Ask\Deserializers\Strategies\DescriptionDeserializationStrategy;
-use DataValues\DataValueFactory;
 use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\StrategicDeserializer;
@@ -19,22 +18,22 @@ use Deserializers\StrategicDeserializer;
  */
 class DescriptionDeserializer implements Deserializer {
 
-	protected $dataValueFactory;
+	protected $dvDeserializer;
 
 	/**
 	 * @var Deserializer
 	 */
 	protected $deserializer;
 
-	public function __construct( DataValueFactory $dataValueFactory ) {
-		$this->dataValueFactory = $dataValueFactory;
+	public function __construct( Deserializer $dataValueDeserializer ) {
+		$this->dvDeserializer = $dataValueDeserializer;
 		$this->deserializer = $this->newDeserializer();
 	}
 
 	protected function newDeserializer() {
 		return new StrategicDeserializer(
 			new DescriptionDeserializationStrategy(
-				$this->dataValueFactory,
+				$this->dvDeserializer,
 				$this
 			),
 			'description',

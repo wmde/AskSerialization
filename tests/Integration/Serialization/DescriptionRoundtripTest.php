@@ -10,16 +10,10 @@ use Ask\Language\Description\Disjunction;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
 use Ask\Serializers\DescriptionSerializer;
-use DataValues\DataValueFactory;
+use DataValues\Deserializers\DataValueDeserializer;
 use DataValues\StringValue;
 
 /**
- * @file
- * @since 1.0
- *
- * @ingroup Ask
- * @group Ask
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
@@ -29,11 +23,12 @@ class DescriptionRoundtripTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider descriptionProvider
 	 */
 	public function testCanRoundtripDescriptionThroughSerialization( Description $description ) {
-		$dataValueFactory = new DataValueFactory();
-		$dataValueFactory->registerDataValue( 'string', 'DataValues\StringValue' );
+		$dvDeserializer = new DataValueDeserializer( array(
+			'string' => 'DataValues\StringValue'
+		) );
 
 		$serializer = new DescriptionSerializer();
-		$deserializer = new DescriptionDeserializer( $dataValueFactory );
+		$deserializer = new DescriptionDeserializer( $dvDeserializer );
 
 		$serialization = $serializer->serialize( $description );
 		$deserialization = $deserializer->deserialize( $serialization );
