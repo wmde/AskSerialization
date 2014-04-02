@@ -4,8 +4,8 @@ namespace Ask\Serializers;
 
 use Ask\Language\Option\PropertyValueSortExpression;
 use Ask\Language\Option\SortExpression;
+use Serializers\DispatchableSerializer;
 use Serializers\Exceptions\UnsupportedObjectException;
-use Serializers\Serializer;
 
 /**
  * @since 1.0
@@ -13,7 +13,7 @@ use Serializers\Serializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortExpressionSerializer implements Serializer {
+class SortExpressionSerializer implements DispatchableSerializer {
 
 	public function serialize( $object ) {
 		$this->assertCanSerialize( $object );
