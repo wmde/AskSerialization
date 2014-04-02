@@ -4,6 +4,7 @@ namespace Ask\Deserializers;
 
 use Ask\Deserializers\Strategies\DescriptionDeserializationStrategy;
 use Deserializers\Deserializer;
+use Deserializers\DispatchableDeserializer;
 use Deserializers\Exceptions\DeserializationException;
 use Deserializers\StrategicDeserializer;
 
@@ -16,7 +17,7 @@ use Deserializers\StrategicDeserializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class DescriptionDeserializer implements Deserializer {
+class DescriptionDeserializer implements DispatchableDeserializer {
 
 	protected $dvDeserializer;
 

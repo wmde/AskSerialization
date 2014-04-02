@@ -3,6 +3,7 @@
 namespace Ask\Serializers;
 
 use Ask\Language\Query;
+use Serializers\DispatchableSerializer;
 use Serializers\Exceptions\UnsupportedObjectException;
 use Serializers\Serializer;
 
@@ -12,7 +13,7 @@ use Serializers\Serializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class QuerySerializer implements Serializer {
+class QuerySerializer implements DispatchableSerializer {
 
 	protected $componentSerializer;
 

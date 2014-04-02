@@ -5,8 +5,8 @@ namespace Ask\Serializers;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SelectionRequest;
 use Ask\Language\Selection\SubjectSelection;
+use Serializers\DispatchableSerializer;
 use Serializers\Exceptions\UnsupportedObjectException;
-use Serializers\Serializer;
 
 /**
  * @since 1.0
@@ -14,7 +14,7 @@ use Serializers\Serializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SelectionRequestSerializer implements Serializer {
+class SelectionRequestSerializer implements DispatchableSerializer {
 
 	public function serialize( $object ) {
 		$this->assertCanSerialize( $object );

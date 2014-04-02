@@ -4,6 +4,7 @@ namespace Ask\Serializers;
 
 use Ask\Language\Option\QueryOptions;
 use Ask\Language\Option\SortExpression;
+use Serializers\DispatchableSerializer;
 use Serializers\Exceptions\UnsupportedObjectException;
 use Serializers\Serializer;
 
@@ -13,7 +14,7 @@ use Serializers\Serializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class QueryOptionsSerializer implements Serializer {
+class QueryOptionsSerializer implements DispatchableSerializer {
 
 	protected $componentSerializer;
 

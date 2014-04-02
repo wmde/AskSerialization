@@ -7,8 +7,8 @@ use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
+use Serializers\DispatchableSerializer;
 use Serializers\Exceptions\UnsupportedObjectException;
-use Serializers\Serializer;
 
 /**
  * @since 1.0
@@ -16,7 +16,7 @@ use Serializers\Serializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class DescriptionSerializer implements Serializer {
+class DescriptionSerializer implements DispatchableSerializer {
 
 	public function serialize( $object ) {
 		$this->assertCanSerialize( $object );
