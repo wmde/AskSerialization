@@ -58,6 +58,10 @@ as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project]
 
 ## Release notes
 
+### 1.0.1 (2014-04-02)
+
+* Switched to using version 3.x of Serialization and version 1.x of DataValues Serialization.
+
 ### 1.0 (2013-12-05)
 
 Initial release with these features:
