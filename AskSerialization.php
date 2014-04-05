@@ -18,7 +18,7 @@ if ( defined( 'ASK_SERIALIZATION_VERSION' ) ) {
 define( 'ASK_SERIALIZATION_VERSION', '1.0.1' );
 
 if ( defined( 'MEDIAWIKI' ) ) {
-	$GLOBALS['wgExtensionCredits']['datavalues'][] = array(
+	$GLOBALS['wgExtensionCredits']['other'][] = array(
 		'path' => __DIR__,
 		'name' => 'Ask Serialization',
 		'version' => ASK_SERIALIZATION_VERSION,
