@@ -36,9 +36,9 @@
 		"files" : [
 			"AskSerialization.php"
 		],
-		"psr-0": {
-			"Ask\\Serializers\\": "src",
-			"Ask\\Deserializers\\": "src",
+		"psr-4": {
+			"Ask\\Serializers\\": "src/Serializers",
+			"Ask\\Deserializers\\": "src/Deserializers",
 			"Ask\\": "src"
 		}
 	},
