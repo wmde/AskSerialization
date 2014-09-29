@@ -27,5 +27,6 @@ if ( defined( 'MEDIAWIKI' ) ) {
 		),
 		'url' => 'https://github.com/wmde/AskSerialization',
 		'description' => 'Serializers and deserializers for the Ask language',
+		'license-name' => 'GPL-2.0+'
 	);
 }
