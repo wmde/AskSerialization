@@ -58,6 +58,10 @@ as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project]
 
 ## Release notes
 
+### 1.0.3 (2014-11-25)
+
+Installation together with DataValues 1.x is now supported.
+
 ### 1.0.2 (2014-07-24)
 
 * When loaded with MediaWiki, this library now shows up under "other" on Special:Version
