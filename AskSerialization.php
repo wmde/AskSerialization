@@ -15,7 +15,7 @@ if ( defined( 'ASK_SERIALIZATION_VERSION' ) ) {
 	return 1;
 }
 
-define( 'ASK_SERIALIZATION_VERSION', '1.0.2' );
+define( 'ASK_SERIALIZATION_VERSION', '1.0.3' );
 
 if ( defined( 'MEDIAWIKI' ) ) {
 	$GLOBALS['wgExtensionCredits']['other'][] = array(
