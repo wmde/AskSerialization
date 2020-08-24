@@ -1,3 +1,5 @@
+This library is no longer under development and is no longer maintained.
+
 # Ask Serialization
 
 Library containing serializers and deserializers for the PHP implementation of the
